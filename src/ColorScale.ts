@@ -16,6 +16,16 @@ class ColorScale {
   private maxColor: Color;
 
   constructor(min: number, max: number, minColor: string, maxColor: string) {
+    if (min == max) {
+      throw new Error('The minimum value cannot be equal to the maximum value.');
+    } else if (min > max) {
+      throw new Error('The minimum value must be less than the maximum value.');
+    }
+
+    if (minColor.toUpperCase() == maxColor.toUpperCase()) {
+      throw new Error('The minimum and maximum colors cannot be equal.');
+    }
+
     this.min = min;
     this.max = max;
     this.minColor = hexToRgb(minColor);
