@@ -1,6 +1,6 @@
-import Color = require('./Color');
+'use strict';
 
-('use strict');
+import Color = require('./Color');
 
 function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -16,13 +16,13 @@ class ColorScale {
   private maxColor: Color;
 
   constructor(min: number, max: number, minColor: string, maxColor: string) {
-    if (min == max) {
+    if (min === max) {
       throw new Error('The minimum value cannot be equal to the maximum value.');
     } else if (min > max) {
       throw new Error('The minimum value must be less than the maximum value.');
     }
 
-    if (minColor.toUpperCase() == maxColor.toUpperCase()) {
+    if (minColor.toUpperCase() === maxColor.toUpperCase()) {
       throw new Error('The minimum and maximum colors cannot be equal.');
     }
 
