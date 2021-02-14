@@ -11,6 +11,12 @@ A utility mimicking Microsoft Excel's Color Scales conditional formatting, which
 npm i color-scales
 ```
 
+Alternatively, import from Skypack, a free CDN for Javascript/TypeScript packages:
+
+```ts
+import ColorScales from "https://cdn.skypack.dev/color-scales";
+```
+
 ### Important Classes
 
 #### ColorScale Class
@@ -49,6 +55,8 @@ The following import and constructor creates a `ColorScale` object.
 
 ``` ts
 const ColorScales = require("color-scales");
+// Alternatively, import from Skypack, a free CDN for Javascript/TypeScript packages:
+// import ColorScales from "https://cdn.skypack.dev/color-scales";
 
 let colorScale = new ColorScales(min, max, minColor, maxColor);
  ```
