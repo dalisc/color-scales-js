@@ -17,6 +17,24 @@ test('Max value should return max color (Color object)', () => {
   expect(minColor).toStrictEqual(expectedColor);
 });
 
+test('Middle value should return the correct middle color (Color object)', () => {
+  const minColor = new ColorScale(0, 100, '#000000', '#ffffff').getColor(50);
+  const expectedColor = new Color(127, 127, 127);
+  expect(minColor).toStrictEqual(expectedColor);
+});
+
+test('Value less than min value should return min color (Color object)', () => {
+  const minColor = new ColorScale(0, 100, '#000000', '#ffffff').getColor(-1);
+  const expectedColor = new Color(0, 0, 0);
+  expect(minColor).toStrictEqual(expectedColor);
+});
+
+test('Value greater than max value should return max color (Color object)', () => {
+  const minColor = new ColorScale(0, 100, '#000000', '#ffffff').getColor(101);
+  const expectedColor = new Color(255, 255, 255);
+  expect(minColor).toStrictEqual(expectedColor);
+});
+
 test('Min value should return min color (hex string)', () => {
   expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(0).toHexString()).toBe('#000000');
 });
@@ -25,12 +43,36 @@ test('Max value should return min color (hex string)', () => {
   expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(100).toHexString()).toBe('#ffffff');
 });
 
+test('Middle value should return the correct middle color (hex string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(50).toHexString()).toBe('#7f7f7f');
+});
+
+test('Value less than min value should return min color (hex string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(-1).toHexString()).toBe('#000000');
+});
+
+test('Value greater than max value should return max color (hex string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(101).toHexString()).toBe('#ffffff');
+});
+
 test('Min value should return min color (rgb string)', () => {
   expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(0).toRGBString()).toBe('rgb(0,0,0)');
 });
 
 test('Max value should return min color (rgb string)', () => {
   expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(100).toRGBString()).toBe('rgb(255,255,255)');
+});
+
+test('Middle value should return the correct middle color (rgb string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(50).toRGBString()).toBe('rgb(127,127,127)');
+});
+
+test('Value less than min value should return min color (rgb string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(-1).toRGBString()).toBe('rgb(0,0,0)');
+});
+
+test('Value greater than max value should return max color (rgb string)', () => {
+  expect(new ColorScale(0, 100, '#000000', '#ffffff').getColor(101).toRGBString()).toBe('rgb(255,255,255)');
 });
 
 /**

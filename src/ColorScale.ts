@@ -37,9 +37,9 @@ class ColorScale {
     if (value > this.max) return this.maxColor;
 
     const weight = (value - this.min) / (this.max - this.min);
-    const r = weight * this.maxColor.r + (1 - weight) * this.minColor.r;
-    const g = weight * this.maxColor.g + (1 - weight) * this.minColor.g;
-    const b = weight * this.maxColor.b + (1 - weight) * this.minColor.g;
+    const r = Math.floor(weight * this.maxColor.r + (1 - weight) * this.minColor.r);
+    const g = Math.floor(weight * this.maxColor.g + (1 - weight) * this.minColor.g);
+    const b = Math.floor(weight * this.maxColor.b + (1 - weight) * this.minColor.b);
 
     return new Color(r, g, b);
   }

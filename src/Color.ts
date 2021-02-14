@@ -6,7 +6,7 @@ function componentToHex(c: number) {
 }
 
 function rgbToHex(color: Color) {
-  return '#' + componentToHex(color.r) + componentToHex(color.g) + componentToHex(color.b);
+  return `#${componentToHex(color.r)}${componentToHex(color.g)}${componentToHex(color.b)}`;
 }
 
 class Color {
