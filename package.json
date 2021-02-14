@@ -9,6 +9,9 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dalisc/color-scales-js.git"
