@@ -18,5 +18,8 @@
     "scales"
   ],
   "author": "Dalis Chan",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
 }
