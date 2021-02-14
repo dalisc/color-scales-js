@@ -23,29 +23,29 @@ import ColorScales from "https://cdn.skypack.dev/color-scales";
 
 The `ColorScale` has the following properties:
 
-`min`: The minimum value of the range.
-`max`: The maximum value of the range.
-`minColor`: The minimum color corresponding to the minimum value.
-`maxColor`: The maximum color corresponding to the maximum value.
+- `min`: The minimum value of the range.
+- `max`: The maximum value of the range.
+- `minColor`: The minimum color corresponding to the minimum value.
+- `maxColor`: The maximum color corresponding to the maximum value.
 
 Its constructor is `ColorScale(min, max, minColor, maxColor)`;
 
 The `ColorScale` class has the following functions:
 
-`getColor`: Param: number. Returns an instance `Color` corresponding to the numerical value supplied, calculated based on the class properties above.
+- `getColor`: Param: number. Returns an instance `Color` corresponding to the numerical value supplied, calculated based on the class properties above.
 
 #### Color Class
 
 The `Color` class is an unexported class. It has the following properties:
 
-`r`: An integer representing the intensity of the red hue. Ranges from 0 to 255.
-`g`: An integer representing the intensity of the green hue. Ranges from 0 to 255.
-`b`: An integer representing the intensity of the blue hue. Ranges from 0 to 255.
+- `r`: An integer representing the intensity of the red hue. Ranges from 0 to 255.
+- `g`: An integer representing the intensity of the green hue. Ranges from 0 to 255.
+- `b`: An integer representing the intensity of the blue hue. Ranges from 0 to 255.
 
 The `Color` class has the following functions:
 
-`toHexString`: Returns the equivalent hex string representation. The string will be in lower case. Example: "#7f7f7f"
-`toRGBString`: Returns the equivalent RGB string representation. The string will be in lower case. Example: "rgb(127,127,127)"
+- `toHexString`: Returns the equivalent hex string representation. The string will be in lower case. Example: "#7f7f7f"
+- `toRGBString`: Returns the equivalent RGB string representation. The string will be in lower case. Example: "rgb(127,127,127)"
 
 ### Example Usage
 
