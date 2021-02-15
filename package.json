@@ -29,7 +29,10 @@
     "gradient",
     "scales",
     "color scales",
-    "color percentage"
+    "color percentage",
+    "hex",
+    "rgb",
+    "rgba"
   ],
   "author": "Dalis Chan",
   "license": "MIT",
