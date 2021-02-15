@@ -88,7 +88,7 @@ Example:
 ```ts
 const ColorScales = require("color-scales");
 
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // red to green from 0 to 100
+let colorScale = new ColorScales(0, 100, "#ffffff", "#000000");
 let hexStr = colorScale.getColor(50).toHexString(); // returns "#7f7f7f"
 ```
 
@@ -98,6 +98,6 @@ Example:
 ```ts
 const ColorScales = require("color-scales");
 
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // red to green from 0 to 100
+let colorScale = new ColorScales(0, 100, "#ffffff", "#000000");
 let rgbStr = colorScale.getColor(50).toRGBString(); // returns "rgb(127,127,127)"
 ```
