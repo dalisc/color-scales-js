@@ -1,7 +1,7 @@
 # color-scales-js
 A utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined min and max values
 
-### Demo: https://codepen.io/dalisc/pen/zYoNQge
+### [Basic CodePen Demo](https://codepen.io/dalisc/pen/zYoNQge)
 
 ## Usage
 
@@ -79,7 +79,7 @@ Example:
 const ColorScales = require("color-scales");
 
 let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // red to green from 0 to 100
-let colorObj = colorScale.get(50); // returns new Color(127, 127, 127)
+let colorObj = colorScale.getColor(50); // returns new Color(127, 127, 127)
 ```
 
 #### Get Hex String
@@ -89,7 +89,7 @@ Example:
 const ColorScales = require("color-scales");
 
 let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // red to green from 0 to 100
-let hexStr = colorScale.get(50).toHexString(); // returns "#7f7f7f"
+let hexStr = colorScale.getColor(50).toHexString(); // returns "#7f7f7f"
 ```
 
 #### Get RGB String
@@ -99,5 +99,5 @@ Example:
 const ColorScales = require("color-scales");
 
 let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // red to green from 0 to 100
-let rgbStr = colorScale.get(50).toRGBString(); // returns "rgb(127,127,127)"
+let rgbStr = colorScale.getColor(50).toRGBString(); // returns "rgb(127,127,127)"
 ```
