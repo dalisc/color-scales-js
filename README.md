@@ -45,7 +45,7 @@ The `Color` class is an unexported class. It has the following properties:
 The `Color` class has the following functions:
 
 - `toHexString`: Returns the equivalent hex string representation. The string will be in lower case. Example: "#7f7f7f"
-- `toRGBString`: Returns the equivalent RGB string representation. The string will be in lower case. Example: "rgb(127,127,127)"
+- `toRGBAString`: Returns the equivalent RGBA string representation. The string will be in lower case. Example: "rgba(127,127,127)"
 
 ### Example Usage
 
@@ -92,12 +92,12 @@ let colorScale = new ColorScales(0, 100, "#ffffff", "#000000");
 let hexStr = colorScale.getColor(50).toHexString(); // returns "#7f7f7f"
 ```
 
-#### Get RGB String
+#### Get RGBA String
 
 Example:
 ```ts
 const ColorScales = require("color-scales");
 
 let colorScale = new ColorScales(0, 100, "#ffffff", "#000000");
-let rgbStr = colorScale.getColor(50).toRGBString(); // returns "rgb(127,127,127)"
+let rgbaStr = colorScale.getColor(50).toRGBAString(); // returns "rgba(127,127,127)"
 ```
