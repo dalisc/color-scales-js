@@ -17,7 +17,6 @@ test('Max alpha should return min color with min value(hex string)', () => {
   expect(new ColorScale(0, 100, '#7f7f7f', '#000000', 1).getColor(0).toHexString()).toBe('#7f7f7f');
 });
 
-
 test('Zero alpha should return white color with max value(hex string)', () => {
   expect(new ColorScale(0, 100, '#7f7f7f', '#ffffff', 0).getColor(0).toHexString()).toBe('#000000');
 });
