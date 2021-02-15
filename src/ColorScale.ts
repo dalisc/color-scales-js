@@ -2,20 +2,21 @@
 
 import Color = require('./Color');
 
-function hexToRgb(hex: string) {
+function hexToRgb(hex: string, alpha: number) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
-    ? new Color(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16))
-    : new Color(0, 0, 0);
+    ? new Color(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16), alpha)
+    : new Color(0, 0, 0, alpha);
 }
 
 class ColorScale {
   private min: number;
   private max: number;
+  private alpha: number;
   private minColor: Color;
   private maxColor: Color;
 
-  constructor(min: number, max: number, minColor: string, maxColor: string) {
+  constructor(min: number, max: number, minColor: string, maxColor: string, alpha: number = 1) {
     if (min === max) {
       throw new Error('The minimum value cannot be equal to the maximum value.');
     } else if (min > max) {
@@ -28,8 +29,9 @@ class ColorScale {
 
     this.min = min;
     this.max = max;
-    this.minColor = hexToRgb(minColor);
-    this.maxColor = hexToRgb(maxColor);
+    this.alpha = alpha;
+    this.minColor = hexToRgb(minColor, alpha);
+    this.maxColor = hexToRgb(maxColor, alpha);
   }
 
   getColor(value: number) {
@@ -41,7 +43,7 @@ class ColorScale {
     const g = Math.floor(weight * this.maxColor.g + (1 - weight) * this.minColor.g);
     const b = Math.floor(weight * this.maxColor.b + (1 - weight) * this.minColor.b);
 
-    return new Color(r, g, b);
+    return new Color(r, g, b, this.alpha);
   }
 }
 
