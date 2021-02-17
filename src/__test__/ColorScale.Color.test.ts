@@ -34,3 +34,48 @@ test('Value greater than max value should return max color (Color object)', () =
   const expectedColor = new Color(255, 255, 255);
   expect(minColor).toStrictEqual(expectedColor);
 });
+
+/**
+ * Color to RGBA string
+ */
+test('Color object with no alpha value should convert to correct RGBA string with alpha value of 1', () => {
+  const color = new Color(81, 12, 33);
+  const expectedRGBAString = 'rgba(81,12,33,1)';
+  expect(color.toRGBAString()).toBe(expectedRGBAString);
+});
+
+test('Color object with specified alpha value should convert to correct RGBA string', () => {
+  const color = new Color(81, 12, 33, 0.7);
+  const expectedRGBAString = 'rgba(81,12,33,0.7)';
+  expect(color.toRGBAString()).toBe(expectedRGBAString);
+});
+
+/**
+ * Color to Hex string
+ */
+test('Color object with no alpha value should convert to correct hex string with alpha value of 1', () => {
+  const color = new Color(81, 12, 33);
+  const expectedRGBAString = '#510c21';
+  expect(color.toHexString()).toBe(expectedRGBAString);
+});
+
+test('Color object with specified alpha value should convert to correct hex string', () => {
+  const color = new Color(81, 12, 33, 0.7);
+  const expectedRGBAString = '#380817';
+  expect(color.toHexString()).toBe(expectedRGBAString);
+});
+
+/**
+ * Alpha input
+ */
+test('Error thrown when alpha value is less than 0', () => {
+  expect(() => new Color(12, 123, 4, -0.6)).toThrow('The alpha value must be between 0 and 1.');
+});
+
+test('Error thrown when alpha value is more than 1', () => {
+  expect(() => new Color(12, 123, 4, 2)).toThrow('The alpha value must be between 0 and 1.');
+});
+
+test('No error thrown when alpha value is between 0 and 1', () => {
+  expect(() => new Color(12, 123, 4, 0.7)).not.toThrow();
+});
