@@ -64,3 +64,18 @@ test('Color object with specified alpha value should convert to correct hex stri
   const expectedRGBAString = '#380817';
   expect(color.toHexString()).toBe(expectedRGBAString);
 });
+
+/**
+ * Alpha input
+ */
+test('Error thrown when alpha value is less than 0', () => {
+  expect(() => new Color(12, 123, 4, -0.6)).toThrow('The alpha value must be between 0 and 1.');
+});
+
+test('Error thrown when alpha value is more than 1', () => {
+  expect(() => new Color(12, 123, 4, 2)).toThrow('The alpha value must be between 0 and 1.');
+});
+
+test('No error thrown when alpha value is between 0 and 1', () => {
+  expect(() => new Color(12, 123, 4, 0.7)).not.toThrow();
+});
