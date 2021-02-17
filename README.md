@@ -1,7 +1,7 @@
 # color-scales
 A utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined min and max values.
 
-### [Basic CodePen Demo](https://codepen.io/dalisc/pen/zYoNQge)
+### [Basic CodePen Demo](https://codepen.io/dalisc/pen/NWbjOwP)
 
 ## Usage
 
