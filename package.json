@@ -1,6 +1,6 @@
 {
   "name": "color-scales",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A simple utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined min and max values.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
