@@ -1,6 +1,7 @@
 'use strict';
 
 import Color = require('./Color');
+import { validateAlphaValue, validateMinMaxColors, validateMinMaxValues } from './validators';
 
 function hexToRgb(hex: string, alpha: number) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -17,15 +18,9 @@ class ColorScale {
   private maxColor: Color;
 
   constructor(min: number, max: number, minColor: string, maxColor: string, alpha: number = 1) {
-    if (min === max) {
-      throw new Error('The minimum value cannot be equal to the maximum value.');
-    } else if (min > max) {
-      throw new Error('The minimum value must be less than the maximum value.');
-    }
-
-    if (minColor.toUpperCase() === maxColor.toUpperCase()) {
-      throw new Error('The minimum and maximum colors cannot be equal.');
-    }
+    validateMinMaxValues(min, max);
+    validateMinMaxColors(minColor, maxColor);
+    validateAlphaValue(alpha);
 
     this.min = min;
     this.max = max;

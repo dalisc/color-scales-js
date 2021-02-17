@@ -1,5 +1,7 @@
 'use strict';
 
+import { validateAlphaValue } from './validators';
+
 function componentToHex(c: number) {
   const hex = c.toString(16);
   return hex.length === 1 ? '0' + hex : hex;
@@ -19,6 +21,8 @@ class Color {
   public alpha: number;
 
   constructor(r: number, g: number, b: number, alpha: number = 1) {
+    validateAlphaValue(alpha);
+
     this.r = r;
     this.g = g;
     this.b = b;
