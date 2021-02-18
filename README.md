@@ -55,7 +55,7 @@ The `Color` class has the following functions:
 - `toRGBString`: Returns the equivalent RGB string representation. The string will be in lower case. Does not support transparency. Example: "rgb(127,127,127)"
 - `toRGBAString`: Returns the equivalent RGBA string representation. The string will be in lower case. Example: "rgba(127,127,127, 0.8)"
 
-### Example Usage
+## Example Usage
 
 #### Constructor
 
