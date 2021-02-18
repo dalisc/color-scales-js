@@ -29,6 +29,10 @@ class Color {
     this.a = a;
   }
 
+  toRGBString() {
+    return `rgb(${Math.floor(this.r * this.a)},${Math.floor(this.g * this.a)},${Math.floor(this.b * this.a)})`;
+  }
+
   toRGBAString() {
     return `rgba(${this.r},${this.g},${this.b},${this.a})`;
   }
