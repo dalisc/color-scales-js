@@ -12,13 +12,13 @@ npm i color-scales
 ```
 Import it in your project:
 ```ts
-const ColorScales = require("color-scales")
+const ColorScale = require("color-scales")
 ```
 
 Alternatively, import directly from Skypack, a free CDN for Javascript/TypeScript packages:
 
 ```ts
-import ColorScales from "https://cdn.skypack.dev/color-scales";
+import ColorScale from "https://cdn.skypack.dev/color-scales";
 ```
 
 ### Important Classes
@@ -60,11 +60,11 @@ The `Color` class has the following functions:
 The following import and constructor creates a `ColorScale` object.
 
 ``` ts
-const ColorScales = require("color-scales");
+const ColorScale = require("color-scales");
 // Alternatively, import from Skypack, a free CDN for Javascript/TypeScript packages:
-// import ColorScales from "https://cdn.skypack.dev/color-scales";
+// import ColorScale from "https://cdn.skypack.dev/color-scales";
 
-let colorScale = new ColorScales(min, max, minColor, maxColor, alpha); // alpha is optional. defaults to 1
+let colorScale = new ColorScale(min, max, minColor, maxColor, alpha); // alpha is optional. defaults to 1
  ```
 
 where `min`, `max`, `minColor`, `maxColor`, and `alpha` are replaced by their intended value;
@@ -72,9 +72,9 @@ where `min`, `max`, `minColor`, `maxColor`, and `alpha` are replaced by their in
 Example:
 
 ```ts
-const ColorScales = require("color-scales");
+const ColorScale = require("color-scales");
 
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000", 0.5); // white to black from 0 to 100 with 50% transparency
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000", 0.5); // white to black from 0 to 100 with 50% transparency
 ```
 
 #### Get Color Object
@@ -82,9 +82,9 @@ let colorScale = new ColorScales(0, 100, "#ffffff", "#000000", 0.5); // white to
 Example:
 
 ```ts
-const ColorScales = require("color-scales");
+const ColorScale = require("color-scales");
 
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000", 0.5); // red to green from 0 to 100
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000", 0.5); // red to green from 0 to 100
 let colorObj = colorScale.getColor(50); // returns new Color(127, 127, 127, 0.5)
 ```
 
@@ -92,18 +92,14 @@ let colorObj = colorScale.getColor(50); // returns new Color(127, 127, 127, 0.5)
 
 Example 1 (full opacity):
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // passing in no alpha value defaults it to 1
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000"); // passing in no alpha value defaults it to 1
 let hexStr = colorScale.getColor(50).toHexString(); // returns "#7f7f7f"
 ```
 
 
 Example 2 (0.5 alpha):
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000", 0.5);
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000", 0.5);
 let hexStr = colorScale.getColor(50).toHexString(); // returns "#3f3f3f"
 ```
 
@@ -115,18 +111,14 @@ As this will give acolor  equivalent to if the transparent color was overlaid on
 
 Example 1 (full opacity):
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000"); // passing in no alpha value defaults it to 1
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000"); // passing in no alpha value defaults it to 1
 let rgbStr = colorScale.getColor(50).toRGBString(); returns "rgba(127,127,127)"
 ```
 
 
 Example 2 (0.5 alpha):
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000", 0.5);
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000", 0.5);
 let rgbStr = colorScale.getColor(50).toRGBString(); // returns "rgba(63,63,63)"
 ```
 
@@ -137,17 +129,13 @@ As this will give color equivalent to if the transparent color was overlaid on a
 
 Example 1 (full opacity):
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000");
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000");
 let rgbaStr = colorScale.getColor(50).toRGBAString(); // returns "rgba(127,127,127)"
 ```
 
 Example 2 (50% transparent):
 
 ```ts
-const ColorScales = require("color-scales");
-
-let colorScale = new ColorScales(0, 100, "#ffffff", "#000000". 0.5);
+let colorScale = new ColorScale(0, 100, "#ffffff", "#000000". 0.5);
 let rgbaStr = colorScale.getColor(50).toRGBAString(); // returns "rgba(127,127,127, 0.5)"
 ```
