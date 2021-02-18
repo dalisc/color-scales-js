@@ -1,7 +1,7 @@
 'use strict';
 
 import Color = require('./Color');
-import { validateAlphaValue, validateMinMaxColors, validateMinMaxValues } from './validators';
+import { validateAlphaValue, validateColorStops, validateMinMaxValues } from './validators';
 
 function hexToRgb(hex: string, alpha: number) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -14,29 +14,36 @@ class ColorScale {
   private min: number;
   private max: number;
   private alpha: number;
-  private minColor: Color;
-  private maxColor: Color;
+  private colorStops: Color[];
 
-  constructor(min: number, max: number, minColor: string, maxColor: string, alpha: number = 1) {
+  constructor(min: number, max: number, colorStops: string[], alpha: number = 1) {
     validateMinMaxValues(min, max);
-    validateMinMaxColors(minColor, maxColor);
+    validateColorStops(colorStops);
     validateAlphaValue(alpha);
 
     this.min = min;
     this.max = max;
     this.alpha = alpha;
-    this.minColor = hexToRgb(minColor, alpha);
-    this.maxColor = hexToRgb(maxColor, alpha);
+    this.colorStops = colorStops.map((colorStop) => hexToRgb(colorStop, alpha));
   }
 
   getColor(value: number) {
-    if (value < this.min) return this.minColor;
-    if (value > this.max) return this.maxColor;
+    const numOfColorStops = this.colorStops.length;
+    if (value < this.min) return this.colorStops[0];
+    if (value > this.max) return this.colorStops[numOfColorStops - 1];
 
-    const weight = (value - this.min) / (this.max - this.min);
-    const r = Math.floor(weight * this.maxColor.r + (1 - weight) * this.minColor.r);
-    const g = Math.floor(weight * this.maxColor.g + (1 - weight) * this.minColor.g);
-    const b = Math.floor(weight * this.maxColor.b + (1 - weight) * this.minColor.b);
+    const range = this.max - this.min;
+    let weight = (value - this.min) / range;
+    const colorStopIndex = Math.max(Math.ceil(weight * (numOfColorStops - 1)), 1);
+
+    const minColor = this.colorStops[colorStopIndex - 1];
+    const maxColor = this.colorStops[colorStopIndex];
+
+    weight = weight * (numOfColorStops - 1) - (colorStopIndex - 1);
+
+    const r = Math.floor(weight * maxColor.r + (1 - weight) * minColor.r);
+    const g = Math.floor(weight * maxColor.g + (1 - weight) * minColor.g);
+    const b = Math.floor(weight * maxColor.b + (1 - weight) * minColor.b);
 
     return new Color(r, g, b, this.alpha);
   }
