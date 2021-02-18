@@ -4,7 +4,6 @@ import Color = require('../Color');
 /**
  * Valid min and max combination, no alpha
  */
-
 test('Min value should return min color (Color object)', () => {
   const minColor = new ColorScale(0, 100, '#000000', '#ffffff').getColor(0);
   const expectedColor = new Color(0, 0, 0);

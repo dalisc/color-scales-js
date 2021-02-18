@@ -1,5 +1,4 @@
 import ColorScale = require('../ColorScale');
-import Color = require('../Color');
 
 /**
  * Valid min and max combination, no alpha

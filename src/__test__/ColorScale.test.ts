@@ -1,10 +1,8 @@
 import ColorScale = require('../ColorScale');
-import Color = require('../Color');
 
 /**
  * Invalid min and max combinations
  */
-
 test('Error thrown when min value equals max value', () => {
   expect(() => new ColorScale(0, 0, '#000000', '#ffffff')).toThrow(
     'The minimum value cannot be equal to the maximum value.',
