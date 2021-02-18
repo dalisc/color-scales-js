@@ -3,6 +3,8 @@ A utility mimicking Microsoft Excel's Color Scales conditional formatting, which
 
 ### [Basic CodePen Demo](https://codepen.io/dalisc/pen/yLVXoeR)
 
+![Screenshot of CodePen demo](img/color-scales-demo-img.PNG)
+
 ## Usage
 
 ### Install from NPM
