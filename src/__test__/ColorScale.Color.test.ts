@@ -102,6 +102,21 @@ test('Third segment value should return the correct color (Color object)', () =>
 });
 
 /**
+ * Color to RGB string
+ */
+test('Color object with no alpha value should convert to correct RGB string', () => {
+  const color = new Color(81, 12, 33);
+  const expectedRGBString = 'rgb(81,12,33)';
+  expect(color.toRGBString()).toBe(expectedRGBString);
+});
+
+test('Color object with specified alpha value should convert to correct RGB string', () => {
+  const color = new Color(81, 12, 33, 0.7);
+  const expectedRGBString = 'rgb(56,8,23)';
+  expect(color.toRGBString()).toBe(expectedRGBString);
+});
+
+/**
  * Color to RGBA string
  */
 test('Color object with no alpha value should convert to correct RGBA string with alpha value of 1', () => {
