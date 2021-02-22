@@ -5,9 +5,6 @@ A utility mimicking Microsoft Excel's Color Scales conditional formatting, which
 
 <img src="img/color-scales-demo-img.PNG" alt="Screenshot of CodePen demo" width="700"/>
 
-
-![Screenshot of CodePen demo](img/color-scales-demo-img.png)
-
 ## Usage
 
 ### Install from NPM
