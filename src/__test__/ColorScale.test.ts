@@ -39,3 +39,22 @@ test('Error thrown when alpha value is more than 1', () => {
 test('No error thrown when alpha value is between 0 and 1', () => {
   expect(() => new ColorScale(0, 100, ['#E4E4E4', '#000000'], 0.7)).not.toThrow();
 });
+
+/**
+ * Hex color input
+ */
+test('Error thrown when one of the hex colors is invalid with extra character', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4E44'])).toThrow('#E4E4E44 is not a valid hex value.');
+});
+
+test('Error thrown when one of the hex colors is invalid with fewer than six characters', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E44'])).toThrow('#E44 is not a valid hex value.');
+});
+
+test('Error thrown when one of the hex colors is invalid with empty string as color input', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', ''])).toThrow(' is not a valid hex value.');
+});
+
+test('Error thrown when one of the hex colors is invalid with characters that are not hexadecimal', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4EK'])).toThrow('#E4E4EK is not a valid hex value.');
+});

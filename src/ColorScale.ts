@@ -5,9 +5,13 @@ import { validateAlphaValue, validateColorStops, validateMinMaxValues } from './
 
 function hexToRgb(hex: string, alpha: number) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? new Color(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16), alpha)
-    : new Color(0, 0, 0, alpha);
+if (result) {
+
+    return  new Color(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16), alpha);
+  } else {
+    throw new Error(`${hex} is not a valid hex value.`);
+  }
+
 }
 
 class ColorScale {
