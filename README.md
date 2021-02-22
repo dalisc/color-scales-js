@@ -1,3 +1,6 @@
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/dalisc/color-scales-js/&lt;Branch Name>.svg?style=flat-square)](https://codecov.io/gh/dalisc/color-scales-js/)
+
+
 # color-scales
 A utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined min and max values.
 
