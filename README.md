@@ -1,4 +1,4 @@
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/dalisc/color-scales-js/&lt;Branch Name>.svg?style=flat-square)](https://codecov.io/gh/dalisc/color-scales-js/)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/dalisc/color-scales-js/coverage.svg?style=flat-square)](https://codecov.io/gh/dalisc/color-scales-js/)
 
 
 # color-scales
