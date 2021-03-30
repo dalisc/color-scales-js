@@ -2,7 +2,7 @@
 
 import Color from './Color';
 import { validateAlphaValue, validateColorStops, validateMinMaxValues } from './validators';
-import { hexToRgb } from './helpers';
+import { hexToColor } from './helpers';
 
 export default class ColorScale {
   private min: number;
@@ -18,7 +18,7 @@ export default class ColorScale {
     this.min = min;
     this.max = max;
     this.alpha = alpha;
-    this.colorStops = colorStops.map((colorStop) => hexToRgb(colorStop, alpha));
+    this.colorStops = colorStops.map((colorStop) => hexToColor(colorStop, alpha));
   }
 
   getColor(value: number) {

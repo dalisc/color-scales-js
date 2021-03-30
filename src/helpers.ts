@@ -2,7 +2,7 @@
 
 import Color from './Color';
 
-export function hexToRgb(hex: string, alpha: number) {
+export function hexToColor(hex: string, alpha: number) {
   if (isValid3DigitHexColor(hex)) {
     hex = convertTo6DigitHexColor(hex);
   }

@@ -1,4 +1,3 @@
-import Color = require('./Color');
 import { isValidHexColor } from './helpers';
 
 export function validateMinMaxValues(min: number, max: number) {
