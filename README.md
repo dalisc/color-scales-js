@@ -2,7 +2,7 @@
 
 
 # color-scales
-A utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined min and max values.
+A utility mimicking Microsoft Excel's Color Scales conditional formatting, which returns the color of a value in a linear gradient between two color endpoints with defined color stops.
 
 ### [Basic CodePen Demo](https://codepen.io/dalisc/pen/yLVXoeR)
 
@@ -34,7 +34,7 @@ The `ColorScale` has the following properties:
 
 - `min` (number): The minimum value of the range.
 - `max` (number): The maximum value of the range.
-- `colorStops` (string[]): An array of colors that act as color stops for the gradient. The colors are spaced out evenly. At least two colors must be passed in. Example: ['#ff0000', '#00ff00', '#0000ff']
+- `colorStops` (string[]): An array of colors that act as color stops for the gradient. The colors are spaced out evenly. At least two colors must be passed in. Both 6-digit an 3-digit hex colors are supported. Example: ['#ff0000', '#00ff00', '#0f0']
 - `alpha` (number): The alpha value that indicates the level of transparency/opagueness. E.g. Alpha of 0.8 means 20% transparent. Optional, defaults to 1.
 
 Its constructor is `ColorScale(min, max, colorStops, alpha)`;
@@ -109,7 +109,7 @@ let hexStr = colorScale.getColor(50).toHexString(); // returns "#3f3f3f"
 ```
 
 
-As this will give acolor  equivalent to if the transparent color was overlaid on a white background. This package version does not support 8-digit hex colors. Thus, if users want to implement true transparency, it is recommended that they use the RGBA string option documented in the next section.
+As this will give acolor  equivalent to if the transparent color was overlaid on a white background. This package version does not support 8-digit hex values. Thus, if users want to implement true transparency, it is recommended that they use the RGBA string option documented in the next section.
 
 
 #### Get RGB String
