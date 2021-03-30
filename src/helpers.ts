@@ -30,7 +30,7 @@ function isValid6DigitHexColor(colorString: string) {
 }
 
 function convertTo6DigitHexColor(threeDigitHex: string) {
-  return threeDigitHex.substring(1).split('').map(function (char) {
+  return threeDigitHex.substring(1).split('').map((char) => {
     return char + char;
   }).join('');
 }
