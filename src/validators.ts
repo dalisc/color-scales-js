@@ -13,7 +13,11 @@ export function validateColorStops(colorStops: string[]) {
     throw new Error('At least two colors must be provided.');
   }
 
-  colorStops.forEach((str) => { if (!isValidHexColor(str)) { throw new Error(`${str} is not a valid hex color.`); } });
+  colorStops.forEach((str) => {
+    if (!isValidHexColor(str)) {
+      throw new Error(`${str} is not a valid hex color.`);
+    }
+  });
 }
 
 export function validateAlphaValue(alpha: number) {

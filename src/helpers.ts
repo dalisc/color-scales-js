@@ -20,21 +20,24 @@ export function isValidHexColor(colorString: string) {
 }
 
 function isValid3DigitHexColor(colorString: string) {
-  const hexColorRegex = /^#(?:[0-9a-fA-F]{3})$/
+  const hexColorRegex = /^#(?:[0-9a-fA-F]{3})$/;
   return colorString.match(hexColorRegex);
 }
 
 function isValid6DigitHexColor(colorString: string) {
-  const hexColorRegex = /^#(?:[0-9a-fA-F]{6})$/
+  const hexColorRegex = /^#(?:[0-9a-fA-F]{6})$/;
   return colorString.match(hexColorRegex);
 }
 
 function convertTo6DigitHexColor(threeDigitHex: string) {
-  return threeDigitHex.substring(1).split('').map((char) => {
-    return char + char;
-  }).join('');
+  return threeDigitHex
+    .substring(1)
+    .split('')
+    .map((char) => {
+      return char + char;
+    })
+    .join('');
 }
-
 
 function componentToHex(c: number) {
   const hex = c.toString(16);
