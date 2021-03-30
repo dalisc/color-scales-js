@@ -1,20 +1,9 @@
 'use strict';
 
 import { validateAlphaValue } from './validators';
+import { rgbaToHex } from './helpers';
 
-function componentToHex(c: number) {
-  const hex = c.toString(16);
-  return hex.length === 1 ? '0' + hex : hex;
-}
-
-function rgbaToHex(color: Color) {
-  const r = Math.floor(color.r * color.a);
-  const g = Math.floor(color.g * color.a);
-  const b = Math.floor(color.b * color.a);
-  return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
-}
-
-class Color {
+export default class Color {
   public r: number;
   public g: number;
   public b: number;
@@ -41,5 +30,3 @@ class Color {
     return rgbaToHex(this);
   }
 }
-
-export = Color;

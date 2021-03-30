@@ -1,4 +1,4 @@
-import ColorScale = require('../ColorScale');
+import ColorScale from '../ColorScale';
 
 /**
  * Valid min and max combination, varying alpha

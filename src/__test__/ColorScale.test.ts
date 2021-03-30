@@ -1,4 +1,4 @@
-import ColorScale = require('../ColorScale');
+import ColorScale from '../ColorScale';
 
 /**
  * Invalid min and max combinations
@@ -44,17 +44,21 @@ test('No error thrown when alpha value is between 0 and 1', () => {
  * Hex color input
  */
 test('Error thrown when one of the hex colors is invalid with extra character', () => {
-  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4E44'])).toThrow('#E4E4E44 is not a valid hex value.');
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4E44'])).toThrow('#E4E4E44 is not a valid hex color.');
 });
 
-test('Error thrown when one of the hex colors is invalid with fewer than six characters', () => {
-  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E44'])).toThrow('#E44 is not a valid hex value.');
+test('Error not thrown with valid 3 digit hex', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E44'])).not.toThrow();
+});
+
+test('Error thrown when one of the hex colors is invalid 3 digit hex', () => {
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4L'])).toThrow('#E4L is not a valid hex color.');
 });
 
 test('Error thrown when one of the hex colors is invalid with empty string as color input', () => {
-  expect(() => new ColorScale(0, 100, ['#E4E4E4', ''])).toThrow(' is not a valid hex value.');
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', ''])).toThrow(' is not a valid hex color.');
 });
 
 test('Error thrown when one of the hex colors is invalid with characters that are not hexadecimal', () => {
-  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4EK'])).toThrow('#E4E4EK is not a valid hex value.');
+  expect(() => new ColorScale(0, 100, ['#E4E4E4', '#E4E4EK'])).toThrow('#E4E4EK is not a valid hex color.');
 });

@@ -1,5 +1,5 @@
-import ColorScale = require('../ColorScale');
-import Color = require('../Color');
+import ColorScale from '../ColorScale';
+import Color from '../Color';
 
 /**
  * Valid min and max combination, 2 colors, no alpha
@@ -38,43 +38,43 @@ test('Value greater than max value should return max color (Color object)', () =
  * Valid min and max combination, 3 colors, no alpha
  */
 test('Min value should return min color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(0);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(0);
   const expectedColor = new Color(0, 0, 0);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('Max value should return max color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(100);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(100);
   const expectedColor = new Color(255, 0, 0);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('First segment value should return the correct color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(25);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(25);
   const expectedColor = new Color(127, 127, 127);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('Middle value should return the correct middle color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(50);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(50);
   const expectedColor = new Color(255, 255, 255);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('Second segment value should return the correct color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(75);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(75);
   const expectedColor = new Color(255, 127, 127);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('Value less than min value should return min color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(-1);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(-1);
   const expectedColor = new Color(0, 0, 0);
   expect(minColor).toStrictEqual(expectedColor);
 });
 
 test('Value greater than max value should return max color (Color object)', () => {
-  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', 'ff0000']).getColor(101);
+  const minColor = new ColorScale(0, 100, ['#000000', '#ffffff', '#ff0000']).getColor(101);
   const expectedColor = new Color(255, 0, 0);
   expect(minColor).toStrictEqual(expectedColor);
 });

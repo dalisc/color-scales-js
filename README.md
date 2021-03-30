@@ -109,7 +109,7 @@ let hexStr = colorScale.getColor(50).toHexString(); // returns "#3f3f3f"
 ```
 
 
-As this will give acolor  equivalent to if the transparent color was overlaid on a white background. This package version does not support 8-digit hex values. Thus, if users want to implement true transparency, it is recommended that they use the RGBA string option documented in the next section.
+As this will give acolor  equivalent to if the transparent color was overlaid on a white background. This package version does not support 8-digit hex colors. Thus, if users want to implement true transparency, it is recommended that they use the RGBA string option documented in the next section.
 
 
 #### Get RGB String
